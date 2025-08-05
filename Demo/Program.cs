@@ -96,6 +96,19 @@ namespace Demo
             typeB.MyFun02();
             #endregion
 
+         #region Binding
+         TypeA typeARef = new TypeB(1, 2); //typeARef.b; //invalid
+         //typeARef.B; //invalid
+         typeARef.A = 100; // valid
+        
+         typeARef.MyFun01(); // non virtual metohd new resclve at compile time based on the type of  reference
+         //    Static Binding || Early Binding
+        
+         typeARef.MyFun02(); //  virtual method override using  override keywords Resolve at runtime based on the type of object
+        
+         //    Dynamic Binding || Late Binding
+        
+         #endregion
         }
     }
 }
